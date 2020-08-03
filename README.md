@@ -16,7 +16,7 @@ but neither is it completely random
 
 The experiment consists in putting into action an  artificial observer, generating a visual scanpath
 (a sequence of fixations, saccades or smooth pursuit) on an image sequence using a simple implementation of the 
-ES method described in Boccignone & Ferraro [1] & [2].
+ES method described in ```Boccignone & Ferraro [1] & [2]```.
 
 
 
@@ -33,9 +33,7 @@ you will find the following directories:
 > - /protobj              functions for sampling proto-object parameters
 > - /Datasets: 		image sequences  to be processed
 > - /results: 		to store  results
-> - /saltools:            the tools for computing saliency: for demo purposes  
-                        here you will find the 3-rd party Self-Resemblance method by Seo and Milanfar, Journal of Vision (2009) 9(12):15, 1Ð27
-                        Store in this directory other salience methods you develop or download from external sources
+> - /saltools:            the tools for computing saliency: for demo purposes here you will find the 3-rd party Self-Resemblance method by ```Seo and Milanfar, Journal of Vision (2009) 9(12):15, 1D27```. Store in this directory other salience methods you develop or download from external sources
 > - /stats:               statistics tools borrowed from various parties
 > - /visualization: 	some visualization tools
   	
@@ -65,17 +63,15 @@ runEcologicalSampling
 
 > sets the configuration script filename for setting the experiment
 > sets the number of observers you want to simulate 
-> generates a scanpath on a video clip for each observer by calling the main function esGenerateScanpath() 
+> generates a scanpath on a video clip for each observer by calling the main function ```esGenerateScanpath()```
 
 ```
 - esGenerateScanpath(): 
 ```
-
    This is the main function to generate and show the simulation of the model on a video clip	
    It generates a visual scanpath, that is a sequence of gaze shifts (saccades and smooth pursuit) on a video sequence   
-   It is a baseline implementation of the Ecological Sampling model steps, as described in Boccignone & Ferraro [1] 
-
-   If the VISUALIZE_RESULTS variable is set to true in the config script, the maps obtained at the different steps 
+   It is a baseline implementation of the Ecological Sampling model steps, as described in ```Boccignone & Ferraro [1]```
+   If the ```VISUALIZE_RESULTS``` variable is set to true in the config script, the maps obtained at the different steps 
    of the method are shown at each video frame.
 
    See the comments in each routine for details of what it does
@@ -85,15 +81,14 @@ runEcologicalSampling
 ```
 - esComputeFeatures()
 ```
-
   The function is a simple wrapper for feature computation. Executes some kind
   of feature extraction algorithm which is defined from the parameter
   fType by calling the appropriate function. 
   Here for simplicity only the Self Resemblance features extraction method has been considered. 
-  Actual feature computation is performed by ThreeDLARK() method, see the directory ./saltools/SelfResemblance2/ 
+  Actual feature computation is performed by ```ThreeDLARK()``` method, see the directory ```./saltools/SelfResemblance2/```
   The SR method provides comparable performance to other methods but at 
   a lower computational complexity and most important can deal with a moving camera
-  If other methods need to be experimented, then you should extend the if...elseif...end
+  If other methods need to be experimented, then you should extend the ```if...elseif...end```
   control structure
 
 ```
@@ -103,10 +98,10 @@ runEcologicalSampling
    of salience computation algorithm which is defined from the parameter
    salType by calling the appropriate function. Here for simplicity only
    the 3-D SELF RESEMBLANCE SPATIO TEMPORAL SALIENCY method has been considered.
-   Actual salience computation is performed by SpaceTimeSaliencyMap() method, see the directory ./saltools/SelfResemblance2/ 
+   Actual salience computation is performed by ```SpaceTimeSaliencyMap()``` method, see the directory ```./saltools/SelfResemblance2/``` 
    The SR method provides comparable performance to other methods but at 
    a lower computational complexity and most important can deal with a moving camera
-   If other methods need to be experimented, then you should extend the if...elseif...end
+   If other methods need to be experimented, then you should extend the ```if...elseif...end```
    control structure
 
 
@@ -120,20 +115,20 @@ runEcologicalSampling
 ```
    Generates the patch map <img src="https://render.githubusercontent.com/render/math?math=M(t)"> parameters <img src="https://render.githubusercontent.com/render/math?math=\theta_p">, in terms of maximum likelihood estimation 
    of an elliptical approximation of each patch.
-   See fitellip() in /protobj
+   See ```fitellip()``` in ```/protobj```
 
 ```
 - InterestPoint_Sampling()
 ```
-   Samples Interest_Point.Max_Points points from set of points (salience map or proto-objects), 
+   Samples ```Interest_Point.Max_Points``` points from set of points (salience map or proto-objects), 
    weighted according to their salience
 
 ```
 - esGetGazeAttractors()
 ```
    Function computing possible ONE or MULTIPLE gaze attractors 
-   If a landscape of proto-objects is given then their centers are used as described in [1] 
-   Otherwise attractors are determined through the IPs sampled from saliency as in [2].
+   If a landscape of proto-objects is given then their centers are used as described in ```[1]``` 
+   Otherwise attractors are determined through the IPs sampled from saliency as in ```[2]```.
 
 ```
 - esComputeComplexity()
@@ -159,7 +154,7 @@ runEcologicalSampling
    Function computing, using gaze attractors,  the actual  gaze relocation by  sampling the appropriate 
    noise parameters from a mixture of <img src="https://render.githubusercontent.com/render/math?math=\alpha">-stable distributions as a function of the oculomotor state
    The parameters are used to propose one or multiple candidate gaze shifts actually implemented by
-   calling for esLangevinSimSampling(), which performs the Langevin step.
+   calling for ```esLangevinSimSampling()```, which performs the Langevin step.
    Eventually decides and sets the actual shift to the new Focus of Attention
 
 ```
@@ -173,7 +168,7 @@ runEcologicalSampling
 ```
    This is the actual procedure for sampling from <img src="https://render.githubusercontent.com/render/math?math=\alpha">-stable distributions and implements the CMS method:
    ```Stable Random Number Generator. Based on the method of J.M. Chambers, C.L. Mallows and B.W. Stuck, "A Method for Simulating Stable Random Variables," JASA 71 (1976): 340-4.```
-   Located in ./stats/alphastable/CMS directory
+   Located in ```./stats/alphastable/CMS``` directory
 
 
 
