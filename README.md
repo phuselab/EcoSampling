@@ -3,7 +3,7 @@
 The code is a simple Demo of the Ecological Sampling (ES)  method,
 which generates gaze shifts on video clips (frame sequences).
 It is a baseline implementation of the Ecological Sampling model described in 
-Boccignone & Ferraro [1], a stochastic model of eye guidance
+```Boccignone & Ferraro [1]```, a stochastic model of eye guidance
 The gaze shift mechanism is conceived as  an active random sampling  that 
 the "foraging eye" carries out upon the visual landscape,
 under the constraints set by the  observable features   and the 
@@ -96,7 +96,7 @@ runEcologicalSampling
 ```
    The function is a simple wrapper for salience computation. Executes some kind
    of salience computation algorithm which is defined from the parameter
-   salType by calling the appropriate function. Here for simplicity only
+   ```salType``` by calling the appropriate function. Here for simplicity only
    the 3-D SELF RESEMBLANCE SPATIO TEMPORAL SALIENCY method has been considered.
    Actual salience computation is performed by ```SpaceTimeSaliencyMap()``` method, see the directory ```./saltools/SelfResemblance2/``` 
    The SR method provides comparable performance to other methods but at 
@@ -178,8 +178,7 @@ Different gaze shifting behaviors can be obtained by playing with parameters in 
 
 ## Rreferences
 
-[1] G. Boccignone and M. Ferraro, Ecological Sampling of Gaze Shifts
-       IEEE Transactions on Systems Man Cybernetics - Part B (published on line IEEExplore)
+```[1] G. Boccignone and M. Ferraro, Ecological Sampling of Gaze Shifts```
 
 ```
 @article{BocFerSMCB2013,
@@ -190,14 +189,9 @@ Different gaze shifting behaviors can be obtained by playing with parameters in 
    pages={1-1}, 
    url = "http://dx.doi.org/10.1109/TCYB.2013.2253460",
 }
-
 ```
 
-[2] G. Boccignone and M. Ferraro, The active sampling of gaze-shifts, 
-       in Image Analysis and Processing ICIAP 2011, 
-       ser. Lecture Notes in Computer Science, 
-       G. Maino and G. Foresti, Eds.  Springer Berlin / Heidelberg, 2011, 
-       vol. 6978, pp. 187?196.
+```[2] G. Boccignone and M. Ferraro, The active sampling of gaze-shifts```
 
 ```
 @incollection{BocFerIciap2011,
