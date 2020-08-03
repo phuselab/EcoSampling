@@ -113,12 +113,12 @@ runEcologicalSampling
 ```
 - esSampleProtoMap():
 ```
-   Generates the patch map or proto-object map $$M(t)$$
+   Generates the patch map or proto-object map <img src="https://render.githubusercontent.com/render/math?math=M(t)">
 
 ```
 - esSampleProtoParameters():
 ```
-   Generates the patch map $$M(t)$$ parameters $$\theta_p$$, in terms of maximum likelihood estimation 
+   Generates the patch map <img src="https://render.githubusercontent.com/render/math?math=M(t)"> parameters <img src="https://render.githubusercontent.com/render/math?math=\theta_p">, in terms of maximum likelihood estimation 
    of an elliptical approximation of each patch.
    See fitellip() in /protobj
 
@@ -138,7 +138,7 @@ runEcologicalSampling
 ```
 - esComputeComplexity()
 ```
-   Computes spatial configuration complexity $$ C(t)$$  of Interest points
+   Computes spatial configuration complexity <img src="https://render.githubusercontent.com/render/math?math=C(t)"> of Interest points
    The function is a simple wrapper for complexity computation. Executes some kind
    of complexity algorithm which is defined from the parameter
    cType by calling the appropriate function.
@@ -147,17 +147,17 @@ runEcologicalSampling
 ```
 - esHyperParamUpdate()
 ```
-   Computes the new Dirichlet hyper-parameter $$\nu_{k}(t)$$
+   Computes the new Dirichlet hyper-parameter <img src="https://render.githubusercontent.com/render/math?math=\nu_{k}(t)">
    Given the complexity $\mathcal{C}(t)$,  we partition the complexity range in order to define  
-   $K$ possible complexity events $\{E_{\mathcal{C}(t)}=k\}_{k=1}^{K}$. 
+   $K$ possible complexity events <img src="https://render.githubusercontent.com/render/math?math=\{E_{\mathcal{C}(t)}=k\}_{k=1}^{K}">. 
   This way the hyper-parameter update    can be rewritten as the recursion
-        $$\nu_{k}(t)= \nu_k(t-1) +\left[ E_{\mathcal{C}(t)} = k \right], k=1,\cdots,K$$.
+        <img src="https://render.githubusercontent.com/render/math?math=\nu_{k}(t)= \nu_k(t-1) +\left[ E_{\mathcal{C}(t)} = k \right], k=1,\cdots,K">.
 
 ```
 - esGazeSampling()
 ```
    Function computing, using gaze attractors,  the actual  gaze relocation by  sampling the appropriate 
-   noise parameters from a mixture of $$\alpha$$-stable distributions as a function of the oculomotor state
+   noise parameters from a mixture of <img src="https://render.githubusercontent.com/render/math?math=\alpha">-stable distributions as a function of the oculomotor state
    The parameters are used to propose one or multiple candidate gaze shifts actually implemented by
    calling for esLangevinSimSampling(), which performs the Langevin step.
    Eventually decides and sets the actual shift to the new Focus of Attention
@@ -171,7 +171,7 @@ runEcologicalSampling
 ```
 - stabrnd():
 ```
-   This is the actual procedure for sampling from $$\alpha$$-stable distributions and implements the CMS method:
+   This is the actual procedure for sampling from <img src="https://render.githubusercontent.com/render/math?math=\alpha">-stable distributions and implements the CMS method:
    Stable Random Number Generator. Based on the method of J.M. Chambers, C.L. Mallows and B.W.
    Stuck, "A Method for Simulating Stable Random Variables," 
    JASA 71 (1976): 340-4.
