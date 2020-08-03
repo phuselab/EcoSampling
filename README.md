@@ -142,14 +142,14 @@ runEcologicalSampling
    The function is a simple wrapper for complexity computation. Executes some kind
    of complexity algorithm which is defined from the parameter
    cType by calling the appropriate function.
-   Default is the Shiner-Davison-Landsberg (SDL) complexity (Physical review E, 59(2), 1459-1464, 1999)
+   Default is the Shiner-Davison-Landsberg (SDL) complexity ```(Physical review E, 59(2), 1459-1464, 1999)```
 
 ```
 - esHyperParamUpdate()
 ```
    Computes the new Dirichlet hyper-parameter <img src="https://render.githubusercontent.com/render/math?math=\nu_{k}(t)">
-   Given the complexity $\mathcal{C}(t)$,  we partition the complexity range in order to define  
-   $K$ possible complexity events <img src="https://render.githubusercontent.com/render/math?math=\{E_{\mathcal{C}(t)}=k\}_{k=1}^{K}">. 
+   Given the complexity <img src="https://render.githubusercontent.com/render/math?math=\mathcal{C}(t)">,  we partition the complexity range in order to define  
+   <img src="https://render.githubusercontent.com/render/math?math=K"> possible complexity events <img src="https://render.githubusercontent.com/render/math?math=\{E_{\mathcal{C}(t)}=k\}_{k=1}^{K}">. 
   This way the hyper-parameter update    can be rewritten as the recursion
         <img src="https://render.githubusercontent.com/render/math?math=\nu_{k}(t)= \nu_k(t-1) +\left[ E_{\mathcal{C}(t)} = k \right], k=1,\cdots,K">.
 
@@ -172,9 +172,7 @@ runEcologicalSampling
 - stabrnd():
 ```
    This is the actual procedure for sampling from <img src="https://render.githubusercontent.com/render/math?math=\alpha">-stable distributions and implements the CMS method:
-   Stable Random Number Generator. Based on the method of J.M. Chambers, C.L. Mallows and B.W.
-   Stuck, "A Method for Simulating Stable Random Variables," 
-   JASA 71 (1976): 340-4.
+   ```Stable Random Number Generator. Based on the method of J.M. Chambers, C.L. Mallows and B.W. Stuck, "A Method for Simulating Stable Random Variables," JASA 71 (1976): 340-4.```
    Located in ./stats/alphastable/CMS directory
 
 
