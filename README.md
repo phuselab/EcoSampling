@@ -9,7 +9,7 @@ the "foraging eye" carries out upon the visual landscape,
 under the constraints set by the  observable features   and the 
 global complexity of the  landscape.    
 The actual  gaze relocation is  driven by a stochastic differential equation 
-whose noise source is sampled from a mixture of $$\alpha$$-stable distributions. 
+whose noise source is sampled from a mixture of <img src="https://render.githubusercontent.com/render/math?math=\alpha">-stable distributions. 
 The sampling strategy  allows to mimic a fundamental property of  eye guidance:  
 where we choose to look next at any given moment in time is not completely deterministic,   
 but neither is it completely random
@@ -63,13 +63,14 @@ The script
 runEcologicalSampling
 ```
 
-(1) sets the configuration script filename for setting the experiment
-(2) sets the number of observers you want to simulate 
-(2) generates a scanpath on a video clip for each observer by calling the main function esGenerateScanpath() 
+> sets the configuration script filename for setting the experiment
+> sets the number of observers you want to simulate 
+> generates a scanpath on a video clip for each observer by calling the main function esGenerateScanpath() 
 
 ```
 - esGenerateScanpath(): 
 ```
+
    This is the main function to generate and show the simulation of the model on a video clip	
    It generates a visual scanpath, that is a sequence of gaze shifts (saccades and smooth pursuit) on a video sequence   
    It is a baseline implementation of the Ecological Sampling model steps, as described in Boccignone & Ferraro [1] 
@@ -84,15 +85,16 @@ runEcologicalSampling
 ```
 - esComputeFeatures()
 ```
-    The function is a simple wrapper for feature computation. Executes some kind
-    of feature extraction algorithm which is defined from the parameter
-    fType by calling the appropriate function. 
-    Here for simplicity only the Self Resemblance features extraction method has been considered. 
-    Actual feature computation is performed by ThreeDLARK() method, see the directory ./saltools/SelfResemblance2/ 
-    The SR method provides comparable performance to other methods but at 
-    a lower computational complexity and most important can deal with a moving camera
-    If other methods need to be experimented, then you should extend the if...elseif...end
-    control structure
+
+  The function is a simple wrapper for feature computation. Executes some kind
+  of feature extraction algorithm which is defined from the parameter
+  fType by calling the appropriate function. 
+  Here for simplicity only the Self Resemblance features extraction method has been considered. 
+  Actual feature computation is performed by ThreeDLARK() method, see the directory ./saltools/SelfResemblance2/ 
+  The SR method provides comparable performance to other methods but at 
+  a lower computational complexity and most important can deal with a moving camera
+  If other methods need to be experimented, then you should extend the if...elseif...end
+  control structure
 
 ```
 - esComputeSaliency():
