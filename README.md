@@ -61,9 +61,9 @@ The script
 runEcologicalSampling
 ```
 
-> sets the configuration script filename for setting the experiment
-> sets the number of observers you want to simulate 
-> generates a scanpath on a video clip for each observer by calling the main function ```esGenerateScanpath()```
+> - sets the configuration script filename for setting the experiment
+> - sets the number of observers you want to simulate 
+> - generates a scanpath on a video clip for each observer by calling the main function ```esGenerateScanpath()```
 
 ```
 - esGenerateScanpath(): 
