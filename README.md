@@ -1,4 +1,4 @@
-#Ecolological Sampling  DEMO
+# Ecolological Sampling  DEMO
 
 The code is a simple Demo of the Ecological Sampling (ES)  method,
 which generates gaze shifts on video clips (frame sequences).
@@ -20,11 +20,11 @@ ES method described in Boccignone & Ferraro [1] & [2].
 
 
 
-### SW INSTALLATION
+### Installation
  
 To  create the software library and run the demos:
 
-**1) unpack the compressed zip file in your working directory and cd to such directory (ecosampling)**
+1) unpack the compressed zip file in your working directory and cd to such directory (ecosampling)
 
 you will find the following directories:
      
@@ -39,24 +39,24 @@ you will find the following directories:
 > - /stats:               statistics tools borrowed from various parties
 > - /visualization: 	some visualization tools
   	
-**2) add the path to this directory and subdirectories in your Matlab environment**
+2) add the path to this directory and subdirectories in your Matlab environment
 
-**3) edit if you like the /config/config_simple.m script for tuning the parameters of the experiment 
+3) edit if you like the /config/config_simple.m script for tuning the parameters of the experiment 
 or just try it in the proposed configuration. Such configuration script will be useful to you  because 
 it holds  all settings used in all parts of the code, enabling the exact
-reproduction of the experiment at some future date**
+reproduction of the experiment at some future date
 
-**4) run demo program**
+4) run demo program
 ```
 runEcologicalSampling
 ```	
 
-### IMAGE SEQUENCES
+### Image sequences
 
 A sample sequence for demo purpose is provided with the source code in the Datasets directory
 Put in this directory your own video clips, as sequences of frames 
    
-### DEMO PROGRAM
+### Demo program
 
 The script
 ```
@@ -81,7 +81,9 @@ runEcologicalSampling
    Settings for the experiment should be held in the configuration
    file.
 
-```- esComputeFeatures()```
+```
+- esComputeFeatures()
+```
     The function is a simple wrapper for feature computation. Executes some kind
     of feature extraction algorithm which is defined from the parameter
     fType by calling the appropriate function. 
@@ -92,7 +94,9 @@ runEcologicalSampling
     If other methods need to be experimented, then you should extend the if...elseif...end
     control structure
 
-```- esComputeSaliency():```
+```
+- esComputeSaliency():
+```
    The function is a simple wrapper for salience computation. Executes some kind
    of salience computation algorithm which is defined from the parameter
    salType by calling the appropriate function. Here for simplicity only
@@ -104,49 +108,67 @@ runEcologicalSampling
    control structure
 
 
-```- esSampleProtoMap():```
+```
+- esSampleProtoMap():
+```
    Generates the patch map or proto-object map $$M(t)$$
 
-```- esSampleProtoParameters():```
+```
+- esSampleProtoParameters():
+```
    Generates the patch map $$M(t)$$ parameters $$\theta_p$$, in terms of maximum likelihood estimation 
    of an elliptical approximation of each patch.
    See fitellip() in /protobj
 
-```- InterestPoint_Sampling()```
+```
+- InterestPoint_Sampling()
+```
    Samples Interest_Point.Max_Points points from set of points (salience map or proto-objects), 
    weighted according to their salience
 
-```- esGetGazeAttractors()```
+```
+- esGetGazeAttractors()
+```
    Function computing possible ONE or MULTIPLE gaze attractors 
    If a landscape of proto-objects is given then their centers are used as described in [1] 
    Otherwise attractors are determined through the IPs sampled from saliency as in [2].
 
-```- esComputeComplexity()```
+```
+- esComputeComplexity()
+```
    Computes spatial configuration complexity $$ C(t)$$  of Interest points
    The function is a simple wrapper for complexity computation. Executes some kind
    of complexity algorithm which is defined from the parameter
    cType by calling the appropriate function.
    Default is the Shiner-Davison-Landsberg (SDL) complexity (Physical review E, 59(2), 1459-1464, 1999)
 
-```- esHyperParamUpdate()```
+```
+- esHyperParamUpdate()
+```
    Computes the new Dirichlet hyper-parameter $$\nu_{k}(t)$$
    Given the complexity $\mathcal{C}(t)$,  we partition the complexity range in order to define  
    $K$ possible complexity events $\{E_{\mathcal{C}(t)}=k\}_{k=1}^{K}$. 
   This way the hyper-parameter update    can be rewritten as the recursion
         $$\nu_{k}(t)= \nu_k(t-1) +\left[ E_{\mathcal{C}(t)} = k \right], k=1,\cdots,K$$.
 
-```- esGazeSampling()```
+```
+- esGazeSampling()
+```
    Function computing, using gaze attractors,  the actual  gaze relocation by  sampling the appropriate 
    noise parameters from a mixture of $$\alpha$$-stable distributions as a function of the oculomotor state
    The parameters are used to propose one or multiple candidate gaze shifts actually implemented by
    calling for esLangevinSimSampling(), which performs the Langevin step.
    Eventually decides and sets the actual shift to the new Focus of Attention
 
-```- esLangevinSimSampling()``` 
+```
+- esLangevinSimSampling()
+``` 
    performing one step of the Langevin like stochastic differential equation 
    for determining the gaze shift
 
-```- stabrnd():```
+```
+- stabrnd():
+```
    This is the actual procedure for sampling from $$\alpha$$-stable distributions and implements the CMS method:
    Stable Random Number Generator. Based on the method of J.M. Chambers, C.L. Mallows and B.W.
    Stuck, "A Method for Simulating Stable Random Variables," 
@@ -155,23 +177,23 @@ runEcologicalSampling
 
 
 
-### TIPS
+### Tips
 
 Different gaze shifting behaviors can be obtained by playing with parameters in the configuration script
 
-## REFERENCES
+## Rreferences
 
 [1] G. Boccignone and M. Ferraro, Ecological Sampling of Gaze Shifts
        IEEE Transactions on Systems Man Cybernetics - Part B (published on line IEEExplore)
 
 ```
- @article{BocFerSMCB2013,
-  title={Ecological Sampling of Gaze Shifts},
+@article{BocFerSMCB2013,
+   title={Ecological Sampling of Gaze Shifts},
    author =  "Boccignone, Giuseppe and Ferraro, Mario",
-  journal="{IEEE} Trans. Systems Man Cybernetics - B",
-  year={2013}, 
-pages={1-1}, 
-url = "http://dx.doi.org/10.1109/TCYB.2013.2253460",
+   journal="{IEEE} Trans. Systems Man Cybernetics - B",
+   year={2013}, 
+   pages={1-1}, 
+   url = "http://dx.doi.org/10.1109/TCYB.2013.2253460",
 }
 
 ```
