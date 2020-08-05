@@ -1,4 +1,4 @@
-# Ecolological Sampling  DEMO
+# Ecological Sampling  DEMO
 
 The code is a simple Demo of the Ecological Sampling (ES)  method,
 which generates gaze shifts on video clips (frame sequences).
@@ -197,7 +197,7 @@ Different gaze shifting behaviors can be obtained by playing with parameters in 
 @incollection{BocFerIciap2011,
    author = "Boccignone, G. and Ferraro, M.",
    title = {The Active Sampling of Gaze-Shifts},
-   booktitle = {Image Analysis and Processing‚ ICIAP 2011},
+   booktitle = {Image Analysis and Processing√¢ ICIAP 2011},
    series = {Lecture Notes in Computer Science},
    editor = {Maino, Giuseppe and Foresti, Gian},
    publisher = {Springer Berlin / Heidelberg},
