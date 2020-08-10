@@ -176,7 +176,7 @@ runEcologicalSampling
 
 Different gaze shifting behaviors can be obtained by playing with parameters in the configuration script
 
-## Rreferences
+## References
 
 ```[1] G. Boccignone and M. Ferraro, Ecological Sampling of Gaze Shifts```
 
